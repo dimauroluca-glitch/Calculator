@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Calcolatrice</title>
     <style>
         html, body {
@@ -56,6 +56,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            -webkit-appearance: none;
+            appearance: none;
         }
         button:hover {
             transform: scale(1.1);
@@ -70,6 +72,10 @@
             height: 100%;
             background-color: #ff4757;
             color: white;
+        }
+        button, .pulsante{
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
         }
     </style>
 </head>
