@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatrice</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, rgb(22, 106, 190), rgb(40, 197, 20), rgb(202, 14, 202));
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .cornice {
+            width: 100%;
+            max-width: 360px;
+            border: 5px solid black;
+            border-radius: 15px;
+            background-color: black;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        input {
+            width: 100%;
+            padding: 15px;
+            font-size: 24px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            text-align: right;
+        }
+        .tastiera {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+        button {
+            background-color: rgb(22, 195, 201);
+            color: black;
+            width: 100%;
+            aspect-ratio: 1;
+            font-size: 22px;
+            font-family: sans-serif;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out, background-color 0.2s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button:hover {
+            transform: scale(1.1);
+            z-index: 1;
+        }
+        button:active {
+            transform: scale(0.95);
+        }
+        .tasto-cancella {
+            grid-column: span 2;
+            aspect-ratio: auto;
+            height: 100%;
+            background-color: #ff4757;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="cornice">
+        <input type="text" id="numero" readonly placeholder="0">
+        <div class="tastiera">
+            <button class="tasto-cancella" onclick="cancella()">C</button>
+            <button onclick="aggiungiAggiungi('/')">/</button>
+            <button onclick="aggiungiAggiungi('*')">*</button>
+            <button onclick="aggiungiAggiungi('7')">7</button>
+            <button onclick="aggiungiAggiungi('8')">8</button>
+            <button onclick="aggiungiAggiungi('9')">9</button>
+            <button onclick="aggiungiAggiungi('-')">-</button>
+            <button onclick="aggiungiAggiungi('4')">4</button>
+            <button onclick="aggiungiAggiungi('5')">5</button>
+            <button onclick="aggiungiAggiungi('6')">6</button>
+            <button onclick="aggiungiAggiungi('+')">+</button>
+            <button onclick="aggiungiAggiungi('1')">1</button>
+            <button onclick="aggiungiAggiungi('2')">2</button>
+            <button onclick="aggiungiAggiungi('3')">3</button>
+            <button style="background-color: rgb(255, 165, 0); grid-row: span 2; height: 100%; aspect-ratio: auto;" onclick="calcola()">=</button>
+            <button style="grid-column: span 2; aspect-ratio: auto; height: 100%;" onclick="aggiungiAggiungi('0')">0</button>
+            <button onclick="aggiungiAggiungi('.')">.</button>
+        </div>
+    </div>
+    <script src="calcolatrice.js"></script>
+</body>
+</html>
