@@ -59,9 +59,9 @@
             -webkit-appearance: none;
             appearance: none;
         }
-        button:hover {
+        button:active {
             transform: scale(1.1);
-            z-index: 1;
+            transition: transform 0.1s ease;
         }
         button:active {
             transform: scale(0.95);
@@ -76,6 +76,11 @@
         button, .pulsante{
             user-select: none;
             -webkit-tap-highlight-color: transparent;
+        }
+        @media (hover: hover) {
+            button:hover {
+                transform: scale(1.1);
+            }
         }
     </style>
 </head>
